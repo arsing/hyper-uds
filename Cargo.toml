@@ -1,0 +1,20 @@
+[package]
+name = "hyper-uds"
+version = "0.1.0"
+authors = ["Azure IoT Edge Devs"]
+license = "MIT"
+edition = "2018"
+
+[dependencies]
+bytes = "0.5"
+futures-core = "0.3"
+futures-util = "0.3"
+hex = "0.4"
+hyper = "0.13"
+tokio = { version = "0.2", features = ["uds"] }
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["handleapi", "winbase", "winnt", "winsock2", "ws2def"] }
+
+[dev-dependencies]
+tokio = { version = "0.2", features = ["macros"] }
